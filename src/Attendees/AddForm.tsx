@@ -50,7 +50,7 @@ function AddForm() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <br />
+        <div className="break"></div>
         <button type="submit">Add Attendee</button>
       </form>
     </React.Fragment>

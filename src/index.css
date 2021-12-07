@@ -71,6 +71,10 @@ textarea {
   resize: none;
 }
 
+.break{
+  flex-basis: 100%;
+}
+
 button {
   padding: 4px 12px;
   border: none;
