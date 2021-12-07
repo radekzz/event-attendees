@@ -1,16 +1,17 @@
 import React from 'react';
-import { useDispatch, shallowEqual, useSelector } from 'react-redux';
-import { removeAttendee } from '../redux/actions/actions';
+import { useDispatch, shallowEqual, useSelector, RootStateOrAny } from 'react-redux';
+import { removeAttendee } from 'redux/actions/actions';
+import { Person } from 'types/types';
 
 function AllAttendees() {
-  const attendeeList = useSelector((state) => state.attendeeList, shallowEqual);
+  const attendeeList = useSelector((state: RootStateOrAny) => state.attendeeList, shallowEqual);
   const dispatch = useDispatch();
 
-  function handleRemoveAttendeeBtnClick(index) {
+  function handleRemoveAttendeeBtnClick(index: number) {
     dispatch(removeAttendee(index));
   }
 
-  const attendeeItems = attendeeList.map((person, index) => (
+  const attendeeItems = attendeeList.map((person: Person, index: number) => (
     <li className="attendees__attendee" key={index}>
       <div className="hello-badge" style={{backgroundColor: person.color}}>
 				<p className="hello-badge__title"><span className="hello-badge__hello">{person.name}</span></p>

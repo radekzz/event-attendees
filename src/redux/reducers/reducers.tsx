@@ -1,4 +1,5 @@
 import { ADD_ATTENDEE, REMOVE_ATTENDEE } from '../actions/actions';
+import { ReduxAction } from 'types/types'
 
 const initialState = {
   attendeeList: [{
@@ -28,7 +29,7 @@ const initialState = {
   }, ],
 };
 
-function rootReducer(state = initialState, action) {
+function rootReducer(state = initialState, action: ReduxAction) {
   switch (action.type) {
     case ADD_ATTENDEE:
       return {

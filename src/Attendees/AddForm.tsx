@@ -13,7 +13,7 @@ function AddForm() {
     setColor("#" + (Math.round(Math.random() * 0XFFFFFF)).toString(16));
   }
   
-  function handleSubmission(e) {
+  function handleSubmission(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     
     randomColor();
