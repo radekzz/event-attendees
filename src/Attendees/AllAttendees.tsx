@@ -2,6 +2,8 @@ import React from 'react';
 import { useDispatch, shallowEqual, useSelector, RootStateOrAny } from 'react-redux';
 import { removeAttendee } from 'redux/actions/actions';
 import { Person } from 'types/types';
+import readData from '../firebase/firebaseRead'
+
 
 function AllAttendees() {
   const attendeeList = useSelector((state: RootStateOrAny) => state.attendeeList, shallowEqual);
