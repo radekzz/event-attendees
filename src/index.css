@@ -1,0 +1,179 @@
+/* ----------------
+  This file is not included by default.
+  To include it, uncomment the appropriate line in src/index.js
+  ----------------
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@400;700&display=swap');
+
+/* Colors: https://coolors.co/4f075a-820f99-f6af09-f8c630 */
+:root {
+  --primary: #f8c630;
+  --primary-dark: #820f99;
+  --dark: #2b202f;
+  --gray: #9f9ea0;
+}
+
+* {
+  font-family: 'Recursive', sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #faf9fa;
+  color: var(--dark);
+  text-align: center;
+}
+
+h1 {
+  font-size: 30px;
+  margin: 0 0 24px 0;
+  padding: 16px 24px;
+  /* background: linear-gradient(169deg, var(--primary), var(--primary-dark)); */
+  background-color: var(--primary);
+  color: #ffffff;
+  text-align: center;
+  border-bottom: 3px solid #f6af09;
+}
+
+h3 {
+  color: var(--primary-dark);
+}
+
+form,
+h3 {
+  padding: 0 16px;
+}
+
+input,
+textarea {
+  width: 300px;
+  border-radius: 4px;
+  border: 1px solid var(--gray);
+}
+
+input:hover,
+textarea:hover {
+  border-color: var(--dark);
+}
+
+input {
+  margin: 4px 0 12px 0;
+  padding: 4px 8px;
+}
+
+textarea {
+  margin-top: 4px;
+  padding: 8px;
+  height: 160px;
+  resize: none;
+}
+
+button {
+  padding: 4px 12px;
+  border: none;
+  background: var(--primary);
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 4px;
+  border-bottom: 3px solid #f6af09;
+}
+
+button:hover {
+  background: var(--primary-dark);
+  border-color: #4f075a;
+}
+
+form button {
+  margin-top: 8px;
+  padding: 6px 12px;
+}
+
+form{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.form-field{
+  float: left;
+}
+
+hr {
+  margin: 24px 16px;
+  height: 1px;
+  border: 0;
+  background: var(--gray);
+}
+
+span {
+  margin-top: 6px;
+  display: inline-block;
+}
+
+label{
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+ul {
+  margin: 16px 0;
+  padding: 0 48px;
+  list-style-type: none;
+}
+
+li button {
+  margin-left: 8px;
+  margin-top: 15px;
+  padding: 2px 8px;
+  background: transparent;
+  border: 1px solid #f5f5f5;
+  color: #f5f5f5;
+}
+
+li button:hover {
+  background: #000;
+  color: #f5f5f5;
+}
+
+.attendees {
+  width: 60%;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.attendees__attendee {
+  min-width: 375px;
+  margin: 0 1% 30px;
+  float: left;
+}
+
+.hello-badge {
+  border-radius: 15px;
+  padding: 10px 0 15px;
+  margin: 0 0 10px;
+}
+
+.hello-badge__title {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.hello-badge__hello {
+  font-size: 35px;
+}
+
+.hello-badge__name {
+  width: 100%;
+  background-color: white;
+  font-size: 26px;
+  padding: 30px 0;
+  margin: 0;
+  color: #2e2e2e;
+}
