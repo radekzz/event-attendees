@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addAttendee } from '../redux/actions/actions';
+import WriteUserData from '../firebase/firebaseWrite';
 
 function AddForm() {
+  //const [id] = useState(uuidv4());
   const [name, setName] = useState('');
   const [color, setColor] = useState('');
   const [email, setEmail] = useState('');
+
 
   const dispatch = useDispatch();
 
@@ -15,9 +19,11 @@ function AddForm() {
   
   function handleSubmission(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    
+    const userId = uuidv4();
+
     randomColor();
-    dispatch(addAttendee(name, color, email));
+    dispatch(addAttendee(userId, name, color, email));
+    WriteUserData(userId, name, color, email);
     setName('');
     setColor('');
     setEmail('');

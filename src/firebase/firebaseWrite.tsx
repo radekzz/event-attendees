@@ -3,12 +3,13 @@ import initFb from './firebaseInit';
 
 initFb();
 
-function writeUserData(userId: number, name: string, email: string, imageUrl: string) {
+function WriteUserData(id: string, name: string, color: string, email: string): void {
     const db = getDatabase();
-    set(ref(db, 'attendees/' + userId), {
-      username: name,
+    set(ref(db, 'attendees/' + id), {
+      id: id,
+      name: name,
+      color: color,
       email: email,
-      profile_picture : imageUrl
     });
   }
-export default writeUserData;
+export default WriteUserData;
