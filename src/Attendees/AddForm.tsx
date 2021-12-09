@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addAttendee } from '../redux/actions/actions';
-import WriteUserData from '../firebase/firebaseWrite';
+import { firebaseWrite } from '../firebase/firebaseCalls';
 import { getRandomHexColor } from '../helpers/helpers';
 
 const AddForm = () => {
@@ -18,9 +18,10 @@ const AddForm = () => {
           e.preventDefault();
           const userId = uuidv4();
           const color = getRandomHexColor();
+          const person = {id: userId, name: name, color: color, email: email}
 
-          dispatch(addAttendee(userId, name, color, email));
-          WriteUserData(userId, name, color, email);
+          dispatch(addAttendee(person));
+          firebaseWrite(person);
           setName('');
           setEmail('');
         }}>

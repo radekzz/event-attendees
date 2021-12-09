@@ -6,6 +6,7 @@ import {
   validateConfig,
 } from 'typed-env-parser'
 
+// Validate env variables
 export const appEnvs = validateConfig({
   NODE_ENV: getStringEnumFromEnvParser('NODE_ENV', ['production', 'development', 'test'] as const),
 

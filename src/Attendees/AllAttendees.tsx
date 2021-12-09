@@ -2,18 +2,18 @@ import React from 'react';
 import { useDispatch, shallowEqual, useSelector, RootStateOrAny } from 'react-redux';
 import { removeAttendee } from 'redux/actions/actions';
 import { Person } from 'types/types';
-import FirebaseRead from '../firebase/firebaseRead'
-import FirebaseDelete from '../firebase/firebaseDelete'
+import { useFirebaseRead, firebaseDelete } from '../firebase/firebaseCalls'
 
 const AllAttendees = () => {
-  FirebaseRead();
+
+  useFirebaseRead();
 
   let attendeeList = useSelector((state: RootStateOrAny) => state.attendeeList, shallowEqual);
   const dispatch = useDispatch();
 
   const handleRemoveAttendeeBtnClick = (id: string) => {
     dispatch(removeAttendee(id));
-    FirebaseDelete(id);
+    firebaseDelete(id);
   }
 
   const attendeeItems = attendeeList && attendeeList.map((person: Person, index: number) => (
