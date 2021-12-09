@@ -1,6 +1,6 @@
 # React - Redux - Typescript - Firebase example app
 
-Attendee app to add & remove attendees in event.
+Attendee project to add & remove attendees in event.
 This is a practice example of using React, Redux, Typescript and Firebase real-time database (read, write, remove).
 
 # Run project
@@ -36,6 +36,20 @@ In this project there is applied Anonymous authentication with following rules:
         ".read": "auth.uid !== null",
         ".write": "auth.uid !== null"
       }
+    }
+
+### Data structure in Firebase real-time database
+If you will have an empty database, data structure should be created while inserting first item. However you can create a data structure by importing a json file into a database.
+
+    {
+	    "attendees" : {
+		    "1d39c26d-05f7-43f2-b4bb-301de32f2a85" : {
+			    "color" : "#73457c",
+		        "email" : "immortal@hero.com",
+		        "id" : "1d39c26d-05f7-43f2-b4bb-301de32f2a85",
+		        "name" : "Chuck Norris"
+		    }
+		}
     }
 
 At the end of a day, it's no difference, but you can later on convert anonymous users to authenticated users (if you decide later on to apply FB or Gmail or custom authentication).
