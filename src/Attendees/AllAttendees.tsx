@@ -5,13 +5,13 @@ import { Person } from 'types/types';
 import FirebaseRead from '../firebase/firebaseRead'
 import FirebaseDelete from '../firebase/firebaseDelete'
 
-function AllAttendees() {
+const AllAttendees = () => {
   FirebaseRead();
 
   let attendeeList = useSelector((state: RootStateOrAny) => state.attendeeList, shallowEqual);
   const dispatch = useDispatch();
 
-  function handleRemoveAttendeeBtnClick(id: string) {
+  const handleRemoveAttendeeBtnClick = (id: string) => {
     dispatch(removeAttendee(id));
     FirebaseDelete(id);
   }

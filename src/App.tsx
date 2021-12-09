@@ -1,7 +1,7 @@
 import React from 'react';
 import Attendees from './Attendees/Attendees';
 
-function App() {
+const App = () => {
   return <Attendees />;
 }
 

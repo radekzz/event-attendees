@@ -1,43 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addAttendee } from '../redux/actions/actions';
 import WriteUserData from '../firebase/firebaseWrite';
+import { getRandomHexColor } from '../helpers/helpers';
 
-function AddForm() {
-  //const [id] = useState(uuidv4());
+const AddForm = () => {
   const [name, setName] = useState('');
-  const [color, setColor] = useState('');
   const [email, setEmail] = useState('');
-
-
   const dispatch = useDispatch();
-
-  const randomColor = () => {
-    setColor("#" + (Math.round(Math.random() * 0XFFFFFF)).toString(16));
-  }
-  
-  function handleSubmission(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const userId = uuidv4();
-
-    randomColor();
-    dispatch(addAttendee(userId, name, color, email));
-    WriteUserData(userId, name, color, email);
-    setName('');
-    setColor('');
-    setEmail('');
-  }
-
-  useEffect(() => {
-    randomColor();
-  }, [name]);
 
   return (
     <React.Fragment>
       <h3>Add a Attendee</h3>
 
-      <form onSubmit={handleSubmission}>
+      <form onSubmit={(e) => {
+          e.preventDefault();
+          const userId = uuidv4();
+          const color = getRandomHexColor();
+
+          dispatch(addAttendee(userId, name, color, email));
+          WriteUserData(userId, name, color, email);
+          setName('');
+          setEmail('');
+        }}>
         <div className="form-field">
           <label htmlFor="name">Name</label>
           <input

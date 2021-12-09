@@ -10813,6 +10813,11 @@ type@^2.5.0:
   resolved "https://registry.yarnpkg.com/type/-/type-2.5.0.tgz#0a2e78c2e77907b252abe5f298c1b01c63f0db3d"
   integrity sha512-180WMDQaIMm3+7hGXWf12GtdniDEy7nYcyFMKJn/eZz/6tSLXrUN9V0wKSbMjej0I1WHWbpREDEKHtqPQa9NNw==
 
+typed-env-parser@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/typed-env-parser/-/typed-env-parser-0.2.0.tgz#ffd32ce2886dd6cfbf471f0f2be2eccd2c47d399"
+  integrity sha512-7cZS5NTYDEb4oEid7HLQm28GL8UqtCWubD02ZK2Xd1hUrpAg/IiA5NGOBXDgJUj8REypSL4YnW4GZ8MjG6Uvgg==
+
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"

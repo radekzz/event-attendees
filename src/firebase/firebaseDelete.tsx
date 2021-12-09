@@ -1,9 +1,6 @@
 import { getDatabase, ref, remove } from 'firebase/database';
-import initFb from './firebaseInit';
 
-initFb();
-
-function FirebaseDelete(id: string): void {
+const FirebaseDelete = (id: string) => {
     const db = getDatabase();
     remove(ref(db, 'attendees/' + id));
   }

@@ -6,7 +6,7 @@ const initialState = {
   attendeeList: [] as Person[]
 };
 
-function rootReducer(state = initialState, action: ReduxAction) {
+const rootReducer = (state = initialState, action: ReduxAction) => {
   switch (action.type) {
     case ADD_ATTENDEE:
       return {
