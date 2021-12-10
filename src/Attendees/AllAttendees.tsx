@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch, shallowEqual, useSelector, RootStateOrAny } from 'react-redux';
-import { removeAttendee } from 'redux/actions/actions';
+import { removeAttendee } from 'reduck/attendees.reduck';
 import { Person } from 'types/types';
-import { useFirebaseRead, firebaseDelete } from '../firebase/firebaseCalls'
+import { useFirebaseRead, firebaseDelete } from '../firebase/firebaseCalls';
 
-const AllAttendees = () => {
+export const AllAttendees = () => {
 
   useFirebaseRead();
 
@@ -34,5 +34,3 @@ const AllAttendees = () => {
     </React.Fragment>
   );
 }
-
-export default AllAttendees;

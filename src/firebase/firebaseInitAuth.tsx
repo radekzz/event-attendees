@@ -3,7 +3,7 @@ import { appEnvs } from 'config';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 
-const FirebaseInitAuth = () => {
+export const FirebaseInitAuth = () => {
   // Init Firebase database
   firebase.initializeApp(appEnvs.firebase);
 
@@ -22,5 +22,4 @@ const FirebaseInitAuth = () => {
     }
   });
 
-  }
-export default FirebaseInitAuth;
+}

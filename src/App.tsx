@@ -1,8 +1,6 @@
 import React from 'react';
-import Attendees from './Attendees/Attendees';
+import { Attendees } from './Attendees/Attendees';
 
-const App = () => {
+export const App = () => {
   return <Attendees />;
 }
-
-export default App;

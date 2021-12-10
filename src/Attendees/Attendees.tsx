@@ -1,8 +1,8 @@
 import React from 'react';
-import AddForm from './AddForm';
-import AllAttendees from './AllAttendees';
+import { AddForm } from './AddForm';
+import { AllAttendees } from './AllAttendees';
 
-const Attendees = () => {
+export const Attendees = () => {
   return (
     <React.Fragment>
       <h1>Event attendees signup</h1>
@@ -13,5 +13,3 @@ const Attendees = () => {
     </React.Fragment>
   );
 }
-
-export default Attendees;

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addAttendee } from '../redux/actions/actions';
+import { addAttendee } from '../reduck/attendees.reduck';
 import { firebaseWrite } from '../firebase/firebaseCalls';
 import { getRandomHexColor } from '../helpers/helpers';
 
-const AddForm = () => {
+export const AddForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const dispatch = useDispatch();
@@ -49,5 +49,3 @@ const AddForm = () => {
     </React.Fragment>
   );
 }
-
-export default AddForm;

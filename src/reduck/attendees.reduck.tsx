@@ -1,12 +1,28 @@
-import { ADD_ATTENDEE, REMOVE_ATTENDEE, FETCH_ATTENDEES } from '../actions/actions';
-import { ReduxAction } from 'types/types'
-import { Person } from 'types/types';
+import { ReduxAction, Person } from "types/types";
+
+// ACTIONS
+
+export const ADD_ATTENDEE = 'ADD_ATTENDEE';
+export const REMOVE_ATTENDEE = 'REMOVE_ATTENDEE';
+export const FETCH_ATTENDEES = 'FETCH_ATTENDEES';
+
+export const addAttendee = (person: Person) => ({ type: ADD_ATTENDEE, payload: { person } });
+
+export const removeAttendee = (id: string) => {
+  return { type: REMOVE_ATTENDEE, payload: {id: id }};
+}
+
+export const fetchAttendees = (person: Person) => {
+  return { type: FETCH_ATTENDEES, payload: { person }};
+}
+
+// REDUCERS
 
 const initialState = {
   attendeeList: [] as Person[]
 };
 
-const rootReducer = (state = initialState, action: ReduxAction) => {
+export const rootReducer = (state = initialState, action: ReduxAction) => {
   switch (action.type) {
     case ADD_ATTENDEE:
       return {
@@ -39,5 +55,3 @@ const rootReducer = (state = initialState, action: ReduxAction) => {
       return state;
   }
 }
-
-export default rootReducer;
