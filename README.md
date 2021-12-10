@@ -1,4 +1,4 @@
-# React - Redux - Typescript - Firebase example app
+# React - Redux - Typescript - Firebase (example app)
 
 Attendee project to add & remove attendees in event.
 This is a practice example of using React, Redux, Typescript and Firebase real-time database (read, write, remove).
