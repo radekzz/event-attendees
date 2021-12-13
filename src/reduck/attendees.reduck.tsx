@@ -43,6 +43,7 @@ export const rootReducer = (state = initialState, action: ReduxAction) => {
       case FETCH_ATTENDEES:
         let result:any = [];
         if(action.payload){
+          // eslint-disable-next-line 
           for (const [key, value] of Object.entries(action.payload)) {
             result.push(value)
           }
