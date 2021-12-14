@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addAttendee } from '../reduck/attendees.reduck';
+import { addAttendeeThunk } from '../reduck/attendees.reduck';
 import { firebaseWrite } from '../firebase/firebaseCalls';
 import { getRandomHexColor } from '../helpers/helpers';
 
@@ -20,7 +20,8 @@ export const AddForm = () => {
           const color = getRandomHexColor();
           const person = {id: userId, name: name, color: color, email: email}
 
-          dispatch(addAttendee(person));
+          //dispatch(addAttendee(person));
+          dispatch(addAttendeeThunk(person))
           firebaseWrite(person);
           setName('');
           setEmail('');

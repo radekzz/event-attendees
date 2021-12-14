@@ -1,4 +1,19 @@
+import { Dispatch } from 'redux';
 import { ReduxAction, Person } from "types/types";
+
+// THUNKS
+
+export const addAttendeeThunk = (person: Person) => async (dispatch: Dispatch) => {
+  dispatch(addAttendee(person))
+}
+
+export const removeAttendeeThunk = (id: string) => async (dispatch: Dispatch) => {
+  dispatch(removeAttendee(id))
+}
+
+export const fetchAttendeesThunk = (person: Person) => async (dispatch: Dispatch) => {
+  dispatch(fetchAttendees(person))
+}
 
 // ACTIONS
 
@@ -13,7 +28,7 @@ export const removeAttendee = (id: string) => {
 }
 
 export const fetchAttendees = (person: Person) => {
-  return { type: FETCH_ATTENDEES, payload: { person }};
+  return { type: FETCH_ATTENDEES, payload: person };
 }
 
 // REDUCERS

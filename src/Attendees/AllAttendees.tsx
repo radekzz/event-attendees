@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, shallowEqual, useSelector, RootStateOrAny } from 'react-redux';
-import { removeAttendee } from 'reduck/attendees.reduck';
+import { removeAttendeeThunk } from 'reduck/attendees.reduck';
 import { Person } from 'types/types';
 import { useFirebaseRead, firebaseDelete } from '../firebase/firebaseCalls';
 
@@ -12,7 +12,7 @@ export const AllAttendees = () => {
   const dispatch = useDispatch();
 
   const handleRemoveAttendeeBtnClick = (id: string) => {
-    dispatch(removeAttendee(id));
+    dispatch(removeAttendeeThunk(id));
     firebaseDelete(id);
   }
 
