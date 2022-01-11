@@ -17,6 +17,11 @@ export const useFirebaseRead = () => {
     }
 }
 
+export const firebaseUpdate = (person: Person) => {
+  const db = getDatabase();
+  syncWidthFirebase && set(ref(db, 'attendees/' + person.id), person);
+}
+
 export const firebaseWrite = (person: Person) => {
   const db = getDatabase();
   syncWidthFirebase && set(ref(db, 'attendees/' + person.id), person);

@@ -7,6 +7,10 @@ export const addAttendeeThunk = (person: Person) => async (dispatch: Dispatch) =
   dispatch(addAttendee(person))
 }
 
+export const updateAttendeeThunk = (person: Person) => async (dispatch: Dispatch) => {
+  dispatch(updateAttendee(person))
+}
+
 export const removeAttendeeThunk = (id: string) => async (dispatch: Dispatch) => {
   dispatch(removeAttendee(id))
 }
@@ -19,9 +23,14 @@ export const fetchAttendeesThunk = (person: Person) => async (dispatch: Dispatch
 
 export const ADD_ATTENDEE = 'ADD_ATTENDEE';
 export const REMOVE_ATTENDEE = 'REMOVE_ATTENDEE';
+export const EDIT_ATTENDEE = 'EDIT_ATTENDEE';
 export const FETCH_ATTENDEES = 'FETCH_ATTENDEES';
 
 export const addAttendee = (person: Person) => ({ type: ADD_ATTENDEE, payload: { person } });
+
+export const updateAttendee = (person: Person) => {
+  return { type: EDIT_ATTENDEE, payload: { person }};
+}
 
 export const removeAttendee = (id: string) => {
   return { type: REMOVE_ATTENDEE, payload: {id: id }};

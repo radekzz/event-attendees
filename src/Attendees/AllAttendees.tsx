@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch, shallowEqual, useSelector, RootStateOrAny } from 'react-redux';
-import { removeAttendeeThunk } from 'reduck/attendees.reduck';
+import { updateAttendeeThunk, removeAttendeeThunk } from 'reduck/attendees.reduck';
 import { Person } from 'types/types';
-import { useFirebaseRead, firebaseDelete } from '../firebase/firebaseCalls';
+import { useFirebaseRead, firebaseUpdate, firebaseDelete } from '../firebase/firebaseCalls';
 
 export const AllAttendees = () => {
 
@@ -10,6 +10,13 @@ export const AllAttendees = () => {
 
   let attendeeList = useSelector((state: RootStateOrAny) => state.attendeeList, shallowEqual);
   const dispatch = useDispatch();
+
+  const handleUpdateAttendeeBtnClick = (person: Person) => {
+    const newPerson = person;
+    newPerson.name = newPerson.name + " ✔"
+    dispatch(updateAttendeeThunk(newPerson));
+    firebaseUpdate(newPerson);
+  }
 
   const handleRemoveAttendeeBtnClick = (id: string) => {
     dispatch(removeAttendeeThunk(id));
@@ -21,6 +28,7 @@ export const AllAttendees = () => {
       <div className="hello-badge" style={{backgroundColor: person.color}}>
 				<p className="hello-badge__title"><span className="hello-badge__hello">{person.name}</span></p>
 				<p className="hello-badge__name">{person.email}</p>
+        <button className="alert button tiny" onClick={() => handleUpdateAttendeeBtnClick(person)}>Confirm</button>
         <button className="alert button tiny" onClick={() => handleRemoveAttendeeBtnClick(person.id)}>Remove me</button>
 			</div>
     </li>
